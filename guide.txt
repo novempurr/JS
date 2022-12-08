@@ -1,0 +1,10 @@
+KHỞI TẠO VÀ KẾT NỐI REPOSITORY:¶ 
+B1: git init  
+B2: git remove add orgin  
+B3: git add *  B4: git commmit -m "message"  
+B5: git push --set-upstream origin master  
+ĐẨY DỮ LIỆU LÊN REMOTE REPOSITORY 
+B1: git add *  
+B2: git commmit -m "message"  
+B3: git push
+
