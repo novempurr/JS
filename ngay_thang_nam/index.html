@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>BAI TAP NGAY THANG NAM</h2>
+   <div>
+    Ngay: <input id="ngay" type="number" min="1" max="31">
+    <br>
+    Thang: <input id="thang" type="number" min="1" max="12">
+    <br>
+    Nam: <input id="nam" type="number">
+   </div>
+   <button onclick="xu_ly_hien_thi()">Hien thi</button>
+   <div id="ket_qua"></div>
+</body>
+<script>
+    function xu_ly_hien_thi(){
+        let sNgay = document.getElementById("ngay").value;
+        let sThang = document.getElementById("thang").value;
+        let sNam = document.getElementById("nam").value;
+
+        // kiem tra du lieu hop le
+
+        let KetQua = "<b>" + sNgay + "-" + sThang + "-" + sNam + "</b>";
+        document.getElementById("ket_qua").innerHTML = KetQua;
+    }
+</script>
+</html>

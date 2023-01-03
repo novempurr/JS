@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h3>Calculator</h3>
+        <input type="number" id="so_hang_1">
+        <input type="number" id="so_hang_2">
+        <br>
+        <button type="button" onclick="xyLyTinhToan('+')">Addition (+)</button>
+        <button type="button" onclick="xyLyTinhToan('-')">Subtraction (-)</button>
+        <button type="button" onclick="xyLyTinhToan('x')">Multiplication (x)</button>
+        <button type="button" onclick="xyLyTinhToan('/')">Division (/)</button>
+        <div id="ket_qua"></div>
+    </form>
+</body>
+<script>
+        // function cong() {
+        //     let so_1_input = document.getElementById("so_hang_1").value;
+        //     let so_2_input = document.getElementById("so_hang_2").value;
+        //     if(so_1_input !== '' && so_2_input !== '') {
+        //         let gia_tri = parseInt(so_1_input) + parseInt(so_2_input);
+        //         document.getElementById("ket_qua").innerHTML = gia_tri;
+        //     }
+        // }
+
+        function xyLyTinhToan(phepToan) {
+           
+            let so_1_input = document.getElementById("so_hang_1").value;
+            let so_2_input = document.getElementById("so_hang_2").value;
+            if(so_1_input !== '' && so_2_input !== '') {
+            let gia_tri = 0;
+
+            if (phepToan === "+") {
+                gia_tri = parseFloat(so_1_input) + parseFloat(so_2_input);
+            } else if (phepToan === "/") {
+                gia_tri = parseFloat(so_1_input) / parseFloat(so_2_input);
+            } else if (phepToan === "x") {
+                gia_tri = parseFloat(so_1_input) * parseFloat(so_2_input);
+            } else if (phepToan === "-") {
+                gia_tri = parseFloat(so_1_input) - parseFloat(so_2_input);
+            }
+
+            document.getElementById("ket_qua").innerHTML = gia_tri;
+        }
+    }
+</script>
+</html>

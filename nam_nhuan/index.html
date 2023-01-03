@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>LEAP YEAR CHECK</h2>
+    <pre>
+        - Is it leap year?
+        - How many days are there in the input month?
+    </pre>
+    <form>
+        Year: <input id="year" type="number" min="1990">
+        <br>
+        Month: <input id="month" type="number" min="1" max="12">
+        <br>
+        <button type="button" onclick="check()">Check</button>
+    </form>
+    <div id="ketqua"></div>
+</body>
+<script>
+    function check() {
+        let year1 = document.getElementById("year").value;
+        let month1 = document.getElementById("month").value;
+
+        // nếu có nhập cả 2: năm và tháng
+
+        if (year1 != "" && month1 != "") {
+            // year và month ở dưới là khác với year month bên trên
+            year2 = parseInt(year1);
+            month2 = parseInt(month1);
+
+            let leapYear = false;
+            if (year2 % 400 == 0) {
+                leapYear = true;
+            } else if(year2 % 4 == 0 && year2 % 100 != 0) {
+                leapYear = true;
+            // } else {
+            //     leapYear = false;
+            // không cần do đã khai báo giá trị default bên trên rồi
+            }
+
+            let chuoi = "";
+            if (leapYear) {
+                chuoi += `${year2} is a leap year.`;
+            } else {
+                chuoi += `${year2} is NOT a leap year.`;
+            }
+
+            let soNgay;
+            switch (month2) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    soNgay = 31; break;
+
+                case 4: case 6: case 9: case 11:
+                    soNgay = 30; break;
+
+                case 2:
+                    soNgay = leapYear ? 29 : 28; break;
+
+                default:
+                    soNgay = 0; break;
+            }
+            chuoi += `<br>Tháng ${month2} có ${soNgay} ngày.`;
+
+            document.getElementById("ketqua").innerHTML = chuoi;
+
+        } else {
+            alert("Vui lòng nhập đầy đủ năm/tháng")
+        }
+    }
+</script>
+</html>

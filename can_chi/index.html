@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let namDuongLich = prompt("Nhập năm dương lịch");
+        if(namDuongLich !== "") {
+            namDuongLich = parseInt(namDuongLich);
+
+            let ketQua = "";
+
+            switch(namDuongLich % 10) {
+                case 0: ketQua += "Canh"; break;
+                case 1: ketQua += "Tân"; break;
+                case 2: ketQua += "Nhâm"; break;
+                case 3: ketQua += "Quý"; break;
+                case 4: ketQua += "Giáp"; break;
+                case 5: ketQua += "Ất"; break;
+                case 6: ketQua += "Bính"; break;
+                case 7: ketQua += "Đinh"; break;
+                case 8: ketQua += "Mậu"; break;
+                case 9: ketQua += "Kỷ"; break;
+
+            }
+
+            ketQua += " ";
+
+            switch(namDuongLich % 12) {
+                case 0: ketQua += "Thân"; break;
+                case 1: ketQua += "Dậu"; break;
+                case 2: ketQua += "Tuất"; break;
+                case 3: ketQua += "Hợi"; break;
+                case 4: ketQua += "Tý"; break;
+                case 5: ketQua += "Sửu"; break;
+                case 6: ketQua += "Dần"; break;
+                case 7: ketQua += "Mão"; break;
+                case 8: ketQua += "Thìn"; break;
+                case 9: ketQua += "Tỵ"; break;
+                case 10: ketQua += "Ngọ"; break;
+                case 11: ketQua += "Mùi"; break;
+    
+            }
+
+        alert (`Năm âm lịch của ${namDuongLich} là ${ketQua}.`)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Tính tổng các số dương chẵn:
+        - Tính tổng các số được nhập vào từ bàn phím
+        - Nếu nhập vào số 0 thì kết thúc chương trình
+    </pre>
+</body>
+<script>
+    let sum = 0;
+    let inputString;
+    let soNguyenChan = []; //mảng
+    do {
+        inputString = prompt("nhập số dương chẵn")
+        alert(inputString)
+
+        if (inputString !== null && inputString !== '') {
+           let temp = parseInt(inputString);
+           if (temp > 0 && temp % 2 === 0) {
+            soNguyenChan.push(temp); //mảng
+            sum += temp;
+           }
+        }
+    } while (inputString !=="0");
+    alert(`Số chẵn: ${soNguyenChan.join(", ")}. \nTotal: ${sum}`);
+</script>
+</html>

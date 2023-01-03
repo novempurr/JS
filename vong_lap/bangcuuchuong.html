@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>In bảng cửu chương</h2>
+    <div id="ketQua"></div>
+
+    <table border="1" id="bangCuuChuong"></table>
+
+    <table border="1" id="bangCuuChuong2"></table>
+
+    <script>
+        const N = 9;
+
+        let chuoi = "";
+
+        for (let i = 1; i <= 10; i++) {
+            chuoi += `${N} x ${i} = ${N*i}<br>`;
+        }
+
+        document.getElementById("ketQua").innerHTML = chuoi;
+    
+        let chuoiHtml = " ";
+        for (let i = 1; i <=10; i++) {
+            chuoiHtml += `<tr>
+                <td>${N} x ${i} = ${N*i}</td>
+                </tr>`;
+        }
+
+        document.getElementById("bangCuuChuong").innerHTML = chuoiHtml;
+    
+        let tblString = "";
+        for (let i =1; i <= 10; i++) {
+            tblString += "<tr>";
+                for (let cot = 2; cot <= 9; cot++) {
+                    tblString += `<td>${cot} x ${i} = ${cot*i}</td>`;
+                }
+                tblString += "</tr>";
+
+        }
+            document.getElementById("bangCuuChuong2").innerHTML = tblString;
+    </script>
+</body>
+</html>
