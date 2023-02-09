@@ -18,12 +18,26 @@
         1 2 3 4 5 6 7
         1 2 3 4 5 6 7 8
     </pre>
-    Nhập giá trị N: <input type="number" id="gia_tri_nhap">
-    <button>In</button>
+    Nhập giá trị N: <input type="number" id="gia_tri_nhap" min="1">
+    <button onclick="xuLyIn()">In</button>
     <script>
         function xuLyIn() {
-            let gia_tri_n = document.getElementById("gia_tri_nhap").value;
+            // alert("Happy new year");
 
+            let gia_tri_n = document.getElementById("gia_tri_nhap").value;
+            alert(`Vừa nhập: ${gia_tri_n}`);
+
+            if(gia_tri_n === "") {
+                alert("vui lòng nhập giá trị");
+                return; // ép kết thúc hàm xuLyIn, không xuống dưới làm tiếp nữa
+            }
+            let so_N = parseInt(gia_tri_n);
+            for (let chi_so_dong = 1;chi_so_dong <= so_N;chi_so_dong++) {
+                for(let j = 1; j <= chi_so_dong; j++){
+                    document.write(j + " ");
+                }
+                document.write("<br>");
+            }
         }
     </script>
 </body>

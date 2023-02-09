@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Bài 9: Viết hàm truyền vào mảng số nguyên bất kỳ,
+        sau đó đảo ngược mảng số nguyên đó.
+        vd: [1, 9, -3, 2, 0, 4]
+        ==> [0] ==> [5 - 0]
+        [1] ==> [5 - 1]
+        [2] ==> [5 - 2]
+        [3] ==> [5 - 3]
+    </pre>
+    <script>
+        let arr1 = [1, 9, -3, 2, 0, 4];
+        console.log(arr1.reverse().join());
+
+        function daoNguocMang(mang) {
+            let temp = mang;
+
+            for (let i = 0; i <= mang.length / 2; i++) {
+                let tmpElement = mang[i];
+                mang[i] = mang[mang.length - 1- i]
+                mang[mang.length - 1 - i] = tmpElement;
+            }
+
+            return temp;
+        }
+    </script>
+</body>
+</html>

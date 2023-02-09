@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Temperature Converter
+    </h1>
+    <p>Type a value in the Fahrenheit field to convert the value to Celsius:</p>
+    <br>
+    <p>Fahrenheit</p><input type="number" id="f_degree" onchange="processConvertF2C()">
+    <p>Celsius:</p>
+    <span id="c_degree"></span>
+
+    <div>
+        Fahrenheit: <input oninput = "showResult('myC',convertFarenheitToCelsius(this.value))" id = "myF">
+        Celsius: <input oninput="showResult('myF', convertCelsiusToFarenheit(this.value))" id = "myC">
+    </div>
+    
+</body>
+<script>
+    function convertFarenheitToCelsius(fDegree) {
+        return (fDegree - 32) / 1.8;
+    }
+
+    function convertCelsiusToFarenheit(cDegree) {
+        return (cDegree * 1.8) + 32;
+    }
+
+
+    function showResult(elementId, value) {
+        document.getElementById(elementId).value = myvalue;
+    }
+
+
+    function processConvertF2C() {
+        let f = parseInt(document.getElementById("f_degree").value);
+
+        document.getElementById("c_degree").innerHTML = convertFarenheitToCelsius(f);
+    }
+</script>
+</html>

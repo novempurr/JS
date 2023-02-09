@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width = "800" height ="800" style = "border: 1px solid blue"></canvas>
+    <script>
+        class Point {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
+        class Circle {
+            constructor(x, y, radius = 1, color = 'yellow') {
+                this.center = new Point(x,y);
+                this.radius = radius;
+                this.color = color;
+            }
+
+            draw(context) {
+                context.beginPath();
+                context.strokeStyle = this.color;
+                context.arc(this.center.x, this.center.y, this.radius, 0, 2 * Math.PI);
+                context.stroke();
+            }
+        }
+
+        let xCircle = new Circle(100, 100, 70, 'red')
+        console.log(xCircle);
+
+        let cv = document.getElementById("myCanvas");
+        let ctx = cv.getContext("2d");
+        xCircle.draw(ctx);
+
+        let yCircle = new Circle(200,200,100);
+        yCircle.draw(ctx);
+    </script>
+</body>
+</html>

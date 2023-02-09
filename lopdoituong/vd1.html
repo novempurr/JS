@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        1. Định nghĩa lớp biểu diễn
+        Xe: hãng xe, model, năm mua, màu sơn, số chỗ ngồi
+        2. Định nghĩa phương thức
+        age() = số năm sử dụng xe (số)
+        output() = xuất thông tin xe (chuỗi)
+        3. Khai báo các xe cụ thể và demo
+    </pre>
+
+    <script>
+        class Car {
+            // hàm tạo (constructor) - được gọi tự động khi khai báo và khởi tạo (new)
+            // seat = 4 là giá trị mặc định, có thể khai báo chỉ 4 giá trị, các giá trị defaul phải đứng liền nhau
+            constructor(s_name, model, year, color, seat = 4) {
+                this.name = s_name;
+                this.model = model;
+                this.year = year;
+                this.color = color;
+                this.seat = seat;
+            }
+
+            age() {
+                return new Date().getFullYear() - this.year;
+            }
+
+            output() {
+                return `Xe ${this.name} ${this.model} ${this.seat} chỗ, màu ${this.color}`;
+            }
+        }
+
+        let myCar = new Car('Toyota', 'Altis', 2019, 'silver');
+        console.log(myCar);
+        console.log(myCar.age(), myCar.output());
+        console.log('Màu sơn:', myCar.color, myCar["color"]);
+
+        let cars = [];
+        cars.push(myCar);
+        cars.push(new Car('Audi', 'Q7', 2022, 'silver', 7));
+
+        console.log(cars);
+
+        //tìm những xe có thời gian sử dụng < 2 năm (dùng ES6)
+        // duyệt mảng
+        const THOI_GIAN_SU_DUNG = 2;
+        let result = [];
+        for(let carIndex in cars) {
+            if (cars[carIndex].age() < THOI_GIAN_SU_DUNG) {
+                result.push(cars[carIndex]);
+            }
+        }
+        console.log('Xe sử dụng dưới 2 năm');
+        console.log(result);
+    </script>
+</body>
+</html>

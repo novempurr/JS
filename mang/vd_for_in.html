@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        let array = [34, 54, 65, 76, 89, 222];
+        console.log('Số phần tử:' + array.length);
+
+        // for (let index = 0; index < array.length; index++) {
+        //     console.log(array[index]);
+        // }
+
+        for (let chiSo in array) {
+            console.log(array[chiSo]);
+        }
+
+
+
+        let text = "";
+        let cars = ["BMW", "Huyndai", "Audi"];
+        for (let idx in cars) {
+            text += cars[idx] + "<br>";
+        }
+
+        document.getElementById('result').innerHTML = text;
+    </script>
+</body>
+</html>

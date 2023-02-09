@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>demo canvas</h1>
+
+    <canvas id="myCanvas" width="600" height="450" style="border: 1px solid blue"></canvas>
+
+    <script>
+        let myCanvas = document.getElementById("myCanvas");
+        let context = myCanvas.getContext("2d");
+
+        // vẽ chữ H
+        context.moveTo(50, 50);
+        context.lineTo(50, 400);
+        context.lineWidth = 10; // độ dày
+        context.strokeStyle = "red";
+        context.stroke();
+
+        context.beginPath(); // tạo đường vẽ mới
+        context.moveTo(350, 50);
+        context.lineTo(350, 400);
+        context.strokeStyle = "green";
+        context.stroke();
+
+        
+        context.beginPath();
+        context.moveTo(0, 225);
+        context.lineTo(400, 225);
+        context.lineWidth = 5;
+        context.strokeStyle = "yellow";
+        context.stroke();
+    </script>
+</body>
+</html>

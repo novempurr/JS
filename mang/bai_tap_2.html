@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2 số chẵn.
+    </pre>
+
+    <script>
+        // duyệt từng ký tự của chuỗi (mảng), nếu phần tử thứ i chẵn và phần tử thứ i+1 chẵn thì chèn dấu - ở giữa
+        let string = prompt("Nhập chuỗi số:");
+
+        // chuỗi là mảng đặc biệt mà mỗi phần tử là 1 kí tự
+        for(let index in string){
+            console.log(string[index]);
+        }
+
+        let output = [];
+
+        //duyệt ký tự của chuỗi(mảng)
+        for(let index = 0; index < string.length; index++) {
+            output.push(string[index]);
+            if(string[index] % 2 == 0 && string[index + 1] % 2 == 0) {
+                // thì chèn dấu - ở giữa 
+                // có thể dùng hàm push hoặc splice
+                // tốt nhất là dùng hàm kết quả output
+                output.push("-");
+            }
+        }
+        console.log('Kết quả:' + output.join(""));
+    </script>
+</body>
+</html>

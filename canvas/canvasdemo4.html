@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="600" style="border: 1px solid blue;">
+    </canvas>
+    <button type="button" onclick="xuLyDiChuyenTraiPhai()">Di chuyển trái - phải</button>
+    <button onclick="xuLyDungTraiPhai()">Dừng T-P</button>
+    <button type="button" onclick="xuLyDiChuyenTrenDuoi()">Di chuyển trên - dưới</button>
+    <button onclick="xuLyDungDiChuyenTrenDuoi()">Dừng T-D</button>
+
+    <script>
+        let myCanvas = document.getElementById("myCanvas");
+        let context = myCanvas.getContext("2d");
+
+        const KHOANG_CACH = 25;
+        let xDistance = 50;
+        let yDistance = 50;
+        let diChuyenTraiPhai;
+        let diChuyenTrenDuoi;
+
+        function veHinhChuNhat(direction = 1) {
+            //direction = 1: hướng trái phải
+            //direction = 2: hướng trên dưới
+
+            //xóa khung vẽ cũ
+            context.clearRect(0, 0, myCanvas.width, myCanvas.height);
+
+            if (direction == 1) {
+                if (xDistance < myCanvas.width) {
+                    xDistance += KHOANG_CACH;
+                } else {
+                    xDistance = KHOANG_CACH;
+                }
+            } else if (direction == 2) {
+                if (yDistance < myCanvas.height) {
+                    yDistance += KHOANG_CACH;
+                } else {
+                    yDistance = KHOANG_CACH;
+                }
+            }
+
+            context.fillStyle = "green";
+            context.fillRect(xDistance, yDistance, 77, 77);
+        }
+        
+        // veHinhChuNhat(150);
+        // cứ 5 giây (5000ms) thì vẽ hình chữ nhật (dịch chuyển sang phải, đụng tường thì quay lui)               
+
+        function xuLyDiChuyenTraiPhai() {
+            diChuyenTraiPhai = setInterval(veHinhChuNhat, 500);
+        }
+
+        function xuLyDungTraiPhai() {
+            if(diChuyenTraiPhai) {
+                clearInterval(diChuyenTraiPhai);
+            }
+        }
+
+        function xuLyDiChuyenTrenDuoi() {
+            diChuyenTrenDuoi = setInterval(veHinhChuNhat, 500, 2);
+        }
+
+        function xuLyDungDiChuyenTrenDuoi() {
+            clearInterval(diChuyenTrenDuoi);
+        }
+    </script>
+</body>
+</html>

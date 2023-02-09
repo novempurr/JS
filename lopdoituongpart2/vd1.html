@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Dài: <input type="number" id="dai">
+    Rộng: <input type="number" id="rong">
+    <button onclick="xuLyVe()">Vẽ hình</button>
+    <br>
+    <div id="ketqua"></div>
+    <br>
+    <br>
+
+    <canvas id="myCanvas" width="800" height="600" style="border: 2px solid black"></canvas>
+    <script>
+        class Rect {
+            constructor (width, height, color) {
+                this.width = width;
+                this.height = height;
+                this.color = color;
+            }
+
+        getArea() {
+            return this.width * this.height;
+        }
+
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+
+        display(context) {
+            //xóa khung vẽ cũ
+            context.clearRect(0, 0, myCanvas.width, myCanvas.height)
+            context.beginPath();
+            context.fillStyle = this.color;
+            context.fillRect(90, 90, this.width, this.height);
+        }
+    }
+
+    let myCanvas = document.getElementById("myCanvas");
+    let context = myCanvas.getContext("2d");
+
+    function xuLyVe() {
+        let width = parseInt(document.getElementById("rong").value);
+        let height = parseInt(document.getElementById("dai").value);
+        let hinhChuNhat = new Rect(width, height, 'orange');
+        hinhChuNhat.display(context);
+        
+        document.getElementById("ketqua").innerHTML = `Diện tích ${hinhChuNhat.getArea()}, chu vi ${hinhChuNhat.getPerimeter()}`;
+
+    }
+
+    </script>
+</body>
+</html>

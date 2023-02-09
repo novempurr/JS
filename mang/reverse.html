@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits = ["Cherry", "banana", "blueberry"];
+        console.log(fruits);
+
+        fruits.reverse();
+        console.log(fruits.join());
+
+        fruits.sort();
+        console.log(fruits.join());
+
+        //sắp xếp không phân biệt ký tự hoa thường
+        fruits.sort(function(a, b) {
+            console.log(a.toLowerCase);
+            return a.toLowerCase() - b.toLowerCase();
+        });
+        console.log(fruits.join());
+
+        let so = [9, 11, -3, 0, 5];
+        so.sort (function(a, b) {
+            // Math.abs() lấy giá trị tuyệt đối
+            // Math.abs(-5) = 5
+            return Math.abs(a) - Math.abs(b);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Bài tập 1: tạo hàm nhận vào hai tham số.
+        Nếu giá trị của tham số 1 lớn hơn tham số 2, hiển thị hộp thoại thông báo cho người dùng
+        nếu giá trị của tham số 1 nhỏ hơn tham số 2, trả về tổng của hai tham số
+    </pre>
+    <script>
+        function kiemTra(thamSo1, thamSo2) {
+            if (thamSo1 > thamSo2) {
+                alert('Tham số thứ nhất lơn hơn tham số thứ 2');
+                return;
+            } else {
+                return thamSo1 + thamSo2;
+            }
+        }
+
+        //demo
+
+        console.log(kiemTra(12, 24));
+        kiemTra(24,12);
+    </script>
+</body>
+</html>

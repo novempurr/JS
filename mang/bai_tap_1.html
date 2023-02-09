@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        - Dùng prompt để nhập só lượng phần tử của mảng (N)
+        - Nhập giá trị cho từng phần tử của mảng myArray
+        - In mảng vừa nhập
+    </pre>
+    <script>
+        let N = parseInt(prompt("Nhập vào số lượng phần tử của mảng:"));
+
+        // Khai báo mảng rỗng
+        let myArray = [];
+
+        let soLuong = 0;
+        while (soLuong < N) {
+            let temp = parseFloat(prompt(`Nhập phần tử thứ ${soLuong+1} số thực:`));
+            // if (temp !== NaN) {
+            // hàm isNaN(số): kiểm tra số đó có giá trị là NaN hay không
+            // khi parseInt, parseFloat cho một chuỗi không phải là số --> trả về giá trị NaN
+            // vd: parseInt("ss") --> NaN 
+            // isNan(parseInt("ss")) --> true
+            // !isNan(parseInt("ss")) = if(isNaN(temp) === false --> false
+
+                if (!isNaN(temp)) {
+                myArray.push(temp);
+                soLuong++;
+            }
+        }
+
+        // for (let index = 0; index < N; index++) {
+        //     let temp = parseFloat(prompt(`Nhập phần tử thứ ${index+1} số thực:`));
+        //     // thêm phần tử vào cuối mảng
+        //     myArray.push(temp);
+        // }
+
+        // xuất
+        alert(myArray);
+    </script>
+</body>
+</html>
