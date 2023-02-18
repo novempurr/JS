@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ElectricLamp {
+            constructor() {
+                this.status = false; //false: off = tắt
+            }
+
+            turnOff() {
+                this.status = false;
+            }
+
+            turnOn() {
+                this.status = true;
+            }
+
+            getStatus() {
+                return this.status ? "Đèn sáng" : "Đèn tắt";
+            }
+        }
+
+        class SwitchButton {
+            constructor() {
+                this.status = false;
+            }
+
+            connectToLamp(electricLamp) {
+                this.lamp = electricLamp;
+            }
+
+            switchOff() {
+                this.status = false;
+                this.lamp.turnOff();
+            }
+
+            switchOn() {
+                this.status = true;
+                this.lamp.turnOn();
+            }
+
+            getStatus() {
+                return this.status ? "Công tắc: ON" : "Công tắc: OFF";
+            }
+
+            toString() {
+                return `${this.getStatus()}, ${this.lamp.getStatus()}`;
+            }
+        }
+
+        let bongDen = new ElectricLamp();
+        let congTac = new SwitchButton();
+
+        //gắn công tắc cho bóng đèn
+        congTac.connectToLamp(bongDen);
+
+        // congTac.switchOn();
+        // congTac.switchOff();
+        // congTac.switchOn();
+        // congTac.switchOff();
+        // congTac.switchOn();
+        // congTac.switchOff();
+        // congTac.switchOn();
+        // congTac.switchOff();
+
+        for(let i = 1; i < 11; i++) {
+            congTac.switchOn();
+            console.log(congTac.toString());
+            congTac.switchOff();
+            console.log(congTac.toString());
+        }
+
+    </script>
+</body>
+</html>

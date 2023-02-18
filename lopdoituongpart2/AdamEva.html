@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="AdamEva.js"></script>
+    <script>
+        let taoMy = new Apple();
+        let taoUc = new Apple();
+
+        let adam = new Human();
+        adam.setName('Admin');
+        adam.setGender(true);
+        adam.setWeight(60);
+        console.log(adam);
+
+        adam.say('Hello Everyone!');
+        adam.eat(taoMy);
+        adam.eat(taoMy);
+        adam.eat(taoMy);
+        adam.eat(taoMy);
+
+        console.log('Táo: ', taoMy.getWeight());
+        console.log('Adam: ', adam.getWeight());
+    </script>
+</body>
+</html>
